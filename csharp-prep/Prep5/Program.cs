@@ -26,7 +26,7 @@ class Program
 
         static int SquareNumber(int number1)
         {
-            int number2 = number1^2;
+            int number2 = number1*number1;
             return number2;
         }
 
