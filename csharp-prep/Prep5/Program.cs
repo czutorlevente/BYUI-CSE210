@@ -26,7 +26,7 @@ class Program
 
         static int SquareNumber(int number1)
         {
-            number2 = number1^2;
+            int number2 = number1^2;
             return number2;
         }
 
@@ -37,7 +37,7 @@ class Program
         string square = square1.ToString();
 
 
-        static string DisplayResult(string s, string nu)
+        static void DisplayResult(string s, string na)
         {
             Console.WriteLine($"{na}, the square of your number is: {s}");
         }
