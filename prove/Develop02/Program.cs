@@ -49,14 +49,18 @@ class Program
 
             else if (response == "3")
             {
+                Console.Write("What is the file name? ");
+                string load_name = Console.ReadLine();
                 Load_file load_1 = new Load_file();
-                lines_1 = load_1.GetLines("Journal.txt");
+                lines_1 = load_1.GetLines(load_name);
             }
 
             else if (response == "4")
             {
+                Console.Write("What is the file name? ");
+                string save_name = Console.ReadLine();
                 Save saving = new Save();
-                saving.Saving(lines_1, "Journal.txt");
+                saving.Saving(lines_1, save_name);
             }
 
             else if (response == "5")
