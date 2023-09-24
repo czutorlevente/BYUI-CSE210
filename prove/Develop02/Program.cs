@@ -9,13 +9,17 @@ class Program
 
         Entry entry = new Entry();
 
+        Save saving = new Save();
 
         string entry_1 = entry.Prompt();
         lines_1.Add(entry_1);
+
+        saving.Saving(lines_1, "Journal.txt");
 
         foreach (string line in lines_1)
         {
             Console.WriteLine(line);
         }
+
     }
 }

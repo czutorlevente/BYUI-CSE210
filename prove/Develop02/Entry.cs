@@ -21,7 +21,10 @@ public class Entry
         Console.WriteLine(question_1);
         string entry_1 = Console.ReadLine();
 
-        string full_entry = $"{question_1} {entry_1}";
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = theCurrentTime.ToShortDateString();
+
+        string full_entry = $"{dateText}{Environment.NewLine}{question_1}{Environment.NewLine}{entry_1}{Environment.NewLine} ";
         return full_entry;
     }
 }
