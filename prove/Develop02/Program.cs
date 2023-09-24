@@ -21,9 +21,22 @@ class Program
 
             if (response == "1")
             {
-                Entry entry = new Entry();
-                string entry_1 = entry.Prompt();
-                lines_1.Add(entry_1);
+                Console.WriteLine("Was this a good or a bad day? (type '1' if good and '2' if bad)");
+                string response2 = Console.ReadLine();
+                if (response2 == "1")
+                {
+                    Entry entry = new Entry();
+                    string entry_1 = entry.Prompt2();
+                    lines_1.Add(entry_1);
+                }
+
+                else
+                {
+                    Entry entry = new Entry();
+                    string entry_1 = entry.Prompt();
+                    lines_1.Add(entry_1);
+                }
+
             }
 
             else if (response == "2")
@@ -48,7 +61,7 @@ class Program
 
             else if (response == "5")
             {
-                
+                Console.WriteLine("Thank you for taking the time to write in the journal!");
             }
         } while (response != "5");
 
