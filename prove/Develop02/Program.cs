@@ -4,6 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Load_file load_1 = new Load_file();
+        string [] lines_1 = load_1.GetLines("Journal.txt");
+
+        Entry entry = new Entry();
+
+
+        string entry_1 = entry.Prompt();
+
+        foreach (string line in lines_1)
+        {
+            Console.WriteLine(line);
+        }
     }
 }
