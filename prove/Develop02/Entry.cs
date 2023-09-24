@@ -24,7 +24,7 @@ public class Entry
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
 
-        string full_entry = $"{dateText}{Environment.NewLine}{question_1}{Environment.NewLine}{entry_1}{Environment.NewLine} ";
+        string full_entry = $"{dateText}{Environment.NewLine}{question_1}{Environment.NewLine}{entry_1}{Environment.NewLine}";
         return full_entry;
     }
 }

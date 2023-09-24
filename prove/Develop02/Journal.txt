@@ -1,12 +1,4 @@
-9/23/2023
-Did you meet someone new today?
-nobody
- 
-9/23/2023
+9/24/2023
 What was the most inspiring thing you experienced today?
-If I finally submit this program, that will be it
- 
-9/23/2023
-What was the most inspiring thing you experienced today?
-That now the main purpose of this program works. Now I just need to create options and a loop.
- 
+I finally got this program done. It was not even as hard as I thought it would be.
+
