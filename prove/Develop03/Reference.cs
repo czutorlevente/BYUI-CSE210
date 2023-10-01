@@ -1,9 +1,18 @@
 using System;
 
-class Program
+class Reference
 {
-    static void Main(string[] args)
+
+    private string _book;
+    private int _chapter;
+    private int _verse;
+    private int _endVerse;
+
+
+
+    public string GetDisplayText()
     {
-        Console.WriteLine("Hello Develop03 World!");
+        return $"{_book} {_chapter}: {_verse}{_endVerse}";
     }
+
 }
