@@ -5,7 +5,7 @@ using System.Text;
 class Scripture
 {
     private Reference _reference;
-    private List<Word> _words;
+    private List<Word> _words = new List<Word>();
     private List<string> _wordStrings;
 
     public Scripture(Reference Reference, string text)
@@ -29,7 +29,7 @@ class Scripture
 
         for (int i = 0; i < numberToHide; i++)
         {
-                int _randomIndex = random.Next(0, _words.Count - 1);
+                int _randomIndex = random.Next(0, _words.Count);
                 _toHide.Add(_randomIndex);
         }
 
@@ -42,6 +42,8 @@ class Scripture
     public string GetDisplayText()
     {
         StringBuilder _displayText = new StringBuilder();
+        _displayText.Append(_reference.GetDisplayText());
+        _displayText.Append(" ");
         foreach (Word word in _words)
         {
             _displayText.Append(word.GetDisplayText());
