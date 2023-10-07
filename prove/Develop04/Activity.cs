@@ -5,9 +5,11 @@ class Activity
     protected string _name;
     protected string _description;
     protected string _duration;
-    public void Activity()
+    public Activity(string name, string des, string dur)
     {
-
+        _name = name;
+        _description = des;
+        _duration = dur;
     }
 
     public void DisplayStartingMessage()
@@ -35,11 +37,8 @@ class Activity
         }
     }
 
-    List<string> spinlist = new List<string>();
-    spinlist.Add("|");
-    spinlist.Add("/");
-    spinlist.Add("-");
-    spinlist.Add("\\");
+    List<string> spinlist = new List<string>{"|", "/", "-", "\\"};
+    
     public void ShowSpinner(int seconds)
     {
         DateTime startTime = DateTime.Now;
