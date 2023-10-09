@@ -12,7 +12,6 @@ class BreathingActivity : Activity
         DisplayStartingMessage();
         ShowCountDown(3);
         Console.WriteLine("Breath in and out following the animation:");
-        ShowSpinner(3);
 
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
@@ -46,8 +45,8 @@ class BreathingActivity : Activity
         Console.Write(".1");
         Thread.Sleep(1000);
         Console.Write("\b \b");
-        Console.Write(".*");
-        Thread.Sleep(2000);
+        Console.Write(". ");
+        ShowSpinner(4);
 
         Console.Write("\b \b\b \b");
         Console.Write("6");
@@ -68,8 +67,7 @@ class BreathingActivity : Activity
         Console.Write("1");
         Thread.Sleep(1000);
         Console.Write("\b \b");
-        Console.Write("*");
-        Thread.Sleep(3000);
+        ShowSpinner(3);
         Console.Write("\b \b");
     }
 }
