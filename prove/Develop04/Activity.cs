@@ -4,8 +4,8 @@ class Activity
 {
     protected string _name;
     protected string _description;
-    protected string _duration;
-    public Activity(string name, string des, string dur)
+    protected int _duration;
+    public Activity(string name, string des, int dur)
     {
         _name = name;
         _description = des;
@@ -19,7 +19,7 @@ class Activity
         Console.WriteLine(_description);
         Console.WriteLine("");
         Console.Write("How long, in seconds, would you like for your session? ");
-        _duration = Console.ReadLine();
+        _duration = int.Parse(Console.ReadLine());
     }
 
     public void DisplayEndingMessage()
@@ -49,7 +49,7 @@ class Activity
         {
             string s = spinlist[i];
             Console.Write(s);
-            Thread.Sleep(500);
+            Thread.Sleep(170);
             Console.Write("\b \b");
             i++;
 
