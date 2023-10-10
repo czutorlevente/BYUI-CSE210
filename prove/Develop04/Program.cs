@@ -5,8 +5,9 @@ class Program
     static void Main(string[] args)
     {
 
-        BreathingActivity breathing = new BreathingActivity(5);
+        BreathingActivity breathing = new BreathingActivity();
 
-        breathing.Run();
+        ListingActivity listing = new ListingActivity();
+        listing.Run();
     }
 }

@@ -5,21 +5,20 @@ class Activity
     protected string _name;
     protected string _description;
     protected int _duration;
-    public Activity(string name, string des, int dur)
+    public Activity(string name, string des)
     {
         _name = name;
         _description = des;
-        _duration = dur;
     }
 
     public void DisplayStartingMessage()
     {
         Console.WriteLine($"Welcome to the {_name}!");
-        Console.WriteLine("");
         Console.WriteLine(_description);
         Console.WriteLine("");
         Console.Write("How long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
+        Console.WriteLine("");
     }
 
     public void DisplayEndingMessage()
