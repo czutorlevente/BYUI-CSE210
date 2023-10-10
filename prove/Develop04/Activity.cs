@@ -13,6 +13,7 @@ class Activity
 
     public void DisplayStartingMessage()
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {_name}!");
         Console.WriteLine(_description);
         Console.WriteLine("");

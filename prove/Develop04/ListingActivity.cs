@@ -19,6 +19,9 @@ class ListingActivity : Activity
 
     public void Run()
     {
+
+        Console.WriteLine("Get ready...");
+        ShowSpinner(3);
         DisplayStartingMessage();
         Console.WriteLine("List as many responses as you can to the following prompt:");
         Console.WriteLine(GetRandomPrompt());

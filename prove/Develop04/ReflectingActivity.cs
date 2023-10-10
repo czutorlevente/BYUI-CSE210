@@ -39,6 +39,7 @@ class ReflectingActivity : Activity
         Console.Write("When you have something in mind, press enter to continue.");
         Console.ReadLine();
         DisplayQuestions();
+        Console.WriteLine("");
         DisplayEndingMessage();
         
     }

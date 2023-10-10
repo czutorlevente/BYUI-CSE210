@@ -9,6 +9,8 @@ class BreathingActivity : Activity
 
     public void Run()
     {
+        Console.WriteLine("Get ready...");
+        ShowSpinner(3);
         DisplayStartingMessage();
         ShowCountDown(3);
         Console.WriteLine("Breath in and out following the animation:");
