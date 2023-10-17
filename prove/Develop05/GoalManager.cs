@@ -71,9 +71,12 @@ class GoalManager
         Console.Write("Which goal did you complete? ");
         int compl_1 = int.Parse(Console.ReadLine());
         int _score1 = _goals[compl_1].RecordEvent();
-        Console.WriteLine($"Congratulations! You have earned {_score1} points!");
+        Console.BackgroundColor = ConsoleColor.DarkBlue;
+        Console.ForegroundColor = ConsoleColor.DarkRed;
+        Console.Write($"Congratulations! You have earned {_score1} points!");
+        ShowSpinner(3);
+        Console.ResetColor();
         _score = _score + _score1;
-        Console.WriteLine($"You have {_score} points.");
     }
 
     public void SaveGoals()
@@ -156,10 +159,14 @@ class GoalManager
 
         while (!_stop)
         {
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine($"\nYou have {_score} points.\n");
+            Console.ResetColor();
             Console.WriteLine($"Menu options:\n 1. Create New Goal\n 2. List Goals\n 3. Save Goals\n 4. Load Goals\n 5. Record Event\n 6. Quit\n");
             Console.Write("Select a choice from the menu: ");
             string _choice = Console.ReadLine();
+            Console.ResetColor();
 
             if (_choice == "1")
             {
@@ -191,6 +198,29 @@ class GoalManager
             {
                 Console.WriteLine($"\nThank you for your time!");
                 _stop = true;
+            }
+        }
+    }
+
+    List<string> spinlist = new List<string>{"|", "/", "-", "\\"};
+    
+    public void ShowSpinner(int seconds)
+    {
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+        int i = 0;
+
+        while (DateTime.Now < endTime)
+        {
+            string s = spinlist[i];
+            Console.Write(s);
+            Thread.Sleep(170);
+            Console.Write("\b \b");
+            i++;
+
+            if (i >= spinlist.Count)
+            {
+                i = 0;
             }
         }
     }
