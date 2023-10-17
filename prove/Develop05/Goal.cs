@@ -13,6 +13,11 @@ abstract class Goal
         _points = points;
     }
 
+    public string GetName()
+    {
+        return _shortName;
+    }
+
     public abstract int RecordEvent();
     public abstract bool IsComplete();
     public virtual string GetDetailString()
