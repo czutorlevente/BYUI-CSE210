@@ -161,9 +161,12 @@ class GoalManager
         {
             Console.BackgroundColor = ConsoleColor.Yellow;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine($"\nYou have {_score} points.\n");
+            Console.Write($"\nYou have {_score} points.");
             Console.ResetColor();
+            Console.WriteLine("\n");
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"Menu options:\n 1. Create New Goal\n 2. List Goals\n 3. Save Goals\n 4. Load Goals\n 5. Record Event\n 6. Quit\n");
+            Console.ResetColor();
             Console.Write("Select a choice from the menu: ");
             string _choice = Console.ReadLine();
             Console.ResetColor();
