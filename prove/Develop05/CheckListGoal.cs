@@ -2,7 +2,7 @@ using System;
 
 class CheckListGoal : Goal
 {
-    private int _amountCompleted = 0;
+    private int _amountCompleted;
     private int _target;
     private int _bonus;
 
@@ -10,6 +10,14 @@ class CheckListGoal : Goal
     {
         _target = target;
         _bonus = bonus;
+        _amountCompleted = 0;
+    }
+
+    public CheckListGoal(string name, string description, int points, int target, int bonus, int _done) : base(name, description, points)
+    {
+        _target = target;
+        _bonus = bonus;
+        _amountCompleted = _done;
     }
 
     public override int RecordEvent()
@@ -44,12 +52,12 @@ class CheckListGoal : Goal
 
         else
         {
-            return $"[ ] {_shortName}: {_description}";
+            return $"[ ] {_shortName}: {_description} --- Currently completed: {_amountCompleted}/{_target}";
         }
     }
 
     public override string GetStringRepresentation()
     {
-        return $"{base._shortName},{base._description},{base._points},{_bonus},{_amountCompleted},{_target}";
+        return $"CheckListGoal:{base._shortName},{base._description},{base._points},{_bonus},{_amountCompleted},{_target}";
     }
 }

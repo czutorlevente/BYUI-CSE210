@@ -1,0 +1,3 @@
+SimpleGoal:Make pizza,Make 1 pizza.,50
+EternalGoal:Scripture study,Read the scriptures.,60
+CheckListGoal:Exercise often,Exercise at least 3 times,30,100,3,3
