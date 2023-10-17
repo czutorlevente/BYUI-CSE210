@@ -215,11 +215,14 @@ class GoalManager
 
         while (DateTime.Now < endTime)
         {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
             string s = spinlist[i];
             Console.Write(s);
             Thread.Sleep(170);
             Console.Write("\b \b");
             i++;
+            Console.ResetColor();
 
             if (i >= spinlist.Count)
             {
