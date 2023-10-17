@@ -82,9 +82,17 @@ class GoalManager
         string fileName = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
+            outputFile.WriteLine($"{_score}");
             foreach (Goal g1 in _goals)
             {
-                outputFile.WriteLine($"{g1.GetStringRepresentation()}");
+                if (g1.IsComplete() == true)
+                {
+                    outputFile.WriteLine($"{g1.GetStringRepresentation()}:1");
+                }
+                else
+                {
+                    outputFile.WriteLine($"{g1.GetStringRepresentation()}:0");
+                }
             }
         }
     }
@@ -95,34 +103,48 @@ class GoalManager
         string filename = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(filename);
 
+        int index = 0;
         foreach (string line in lines)
         {
-            string[] parts = line.Split(":");
-
-            string _goalType = parts[0];
-            string _details = parts[1];
-
-            string[] parts_2 = _details.Split(",");
-
-            if (_goalType == "SimpleGoal")
+            if (index == 0)
             {
-                SimpleGoal newGoal = new SimpleGoal(parts_2[0], parts_2[1], int.Parse(parts_2[2]));
-                _goals.Add(newGoal);
-
+                _score = int.Parse(line);
             }
-
-            else if (_goalType == "EternalGoal")
+            else if (index > 0)
             {
-                EternalGoal newGoal = new EternalGoal(parts_2[0], parts_2[1], int.Parse(parts_2[2]));
-                _goals.Add(newGoal);
+                string[] parts = line.Split(":");
 
-            }
+                string _goalType = parts[0];
+                string _details = parts[1];
+                string _isComplete = parts[2];
 
-            else if (_goalType == "CheckListGoal")
-            {
-                CheckListGoal newGoal = new CheckListGoal(parts_2[0], parts_2[1], int.Parse(parts_2[2]), int.Parse(parts_2[5]), int.Parse(parts_2[3]), int.Parse(parts_2[4]));
-                _goals.Add(newGoal);
+                string[] parts_2 = _details.Split(",");
+
+                if (_goalType == "SimpleGoal")
+                {
+                    SimpleGoal newGoal = new SimpleGoal(parts_2[0], parts_2[1], int.Parse(parts_2[2]));
+                    if (_isComplete == "1")
+                    {
+                        newGoal.SetComplete();
+                    }
+                    _goals.Add(newGoal);
+
+                }
+
+                else if (_goalType == "EternalGoal")
+                {
+                    EternalGoal newGoal = new EternalGoal(parts_2[0], parts_2[1], int.Parse(parts_2[2]));
+                    _goals.Add(newGoal);
+
+                }
+
+                else if (_goalType == "CheckListGoal")
+                {
+                    CheckListGoal newGoal = new CheckListGoal(parts_2[0], parts_2[1], int.Parse(parts_2[2]), int.Parse(parts_2[5]), int.Parse(parts_2[3]), int.Parse(parts_2[4]));
+                    _goals.Add(newGoal);
+                }
             }
+            index++;
         }
 
 

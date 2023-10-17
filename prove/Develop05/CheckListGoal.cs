@@ -28,7 +28,7 @@ class CheckListGoal : Goal
         {
             _toReturn = _toReturn + _bonus;
         }
-        return base._points;
+        return _toReturn;
     }
 
     public override bool IsComplete()
