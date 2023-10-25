@@ -33,6 +33,9 @@ class ExerciseManager
             Console.Clear();
         }
 
+        Console.Write(mot.GiveQuote());
+        mot.ShowSpinner(7);
+
         while (!_stop)
         {
             Console.Clear();
@@ -83,6 +86,8 @@ class ExerciseManager
             else
             {
                Console.WriteLine("Thank you for your time!");
+               Console.ForegroundColor = ConsoleColor.Cyan;
+               Console.WriteLine($"Remember: {mot.GiveQuote()}");
                _stop = true;
             }
 
