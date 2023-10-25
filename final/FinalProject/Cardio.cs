@@ -4,19 +4,19 @@ class Cardio : Exercise
 {
     private int _duration;
 
-    public Cardio(int duration, string name, string description, int points) : base(name, description, points)
+    public Cardio(int duration, string name, string description) : base(name, description, "CA")
     {
         _duration = duration;
     }
 
-    public Cardio(string name, string description, int points) : base(name, description, points)
+    public Cardio(string name, string description) : base(name, description, "CA")
     {
         _duration = 10;
     }
 
     public override string StringToSave()
     {
-        return $"CA:{base._name},{base._descripton},{base._points},{_duration}";
+        return $"CA:{base._name}*{base._descripton}*{_duration}";
     }
 
     public override string GetCurrentLevel()

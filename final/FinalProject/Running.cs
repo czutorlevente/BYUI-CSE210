@@ -5,13 +5,13 @@ class Running : Exercise
     private string _speed;
     private int _duration;
 
-    public Running(string speed, int duration, string name, string description, int points) : base(name, description, points)
+    public Running(string speed, int duration, string name, string description) : base(name, description, "R")
     {
         _speed = speed;
         _duration = duration;
     }
 
-    public Running(string name, string description, int points) : base(name, description, points)
+    public Running(string name, string description) : base(name, description, "R")
     {
         _speed = "10 m/h";
         _duration = 10;
@@ -19,7 +19,7 @@ class Running : Exercise
 
     public override string StringToSave()
     {
-        return $"BW:{base._name},{base._descripton},{base._points},{_speed},{_duration}";
+        return $"BW:{base._name}*{base._descripton}*{_speed}*{_duration}";
     }
 
     public override string GetCurrentLevel()
