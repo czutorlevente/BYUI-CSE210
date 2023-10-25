@@ -38,7 +38,19 @@ abstract class Exercise
 
     public string GetReport()
     {
-        return $"{_name}: {_description} --- {GetCurrentLevel()}\nCompleted {_count} times\n";
+        if (_count == 0)
+        {
+            return $"{_name}: {_description} --- {GetCurrentLevel()}\nNot yet completed\n";
+        }
+
+        else if (_count == 1)
+        {
+            return $"{_name}: {_description} --- {GetCurrentLevel()}\nCompleted once\n";
+        }
+        else
+        {
+            return $"{_name}: {_description} --- {GetCurrentLevel()}\nCompleted {_count} times\n";
+        }
     }
 
     public string GetName()
