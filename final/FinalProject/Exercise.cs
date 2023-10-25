@@ -3,16 +3,19 @@ using System;
 abstract class Exercise
 {
     protected string _name;
-    protected string _descripton;
+    protected string _description;
     private string _type;
     private int _wasEasyOrHard;
+    protected int _count;
 
-    public Exercise(string name, string description, string type)
+
+    public Exercise(string name, string description, string type, int count)
     {
         _name = name;
-        _descripton = description;
+        _description = description;
         _wasEasyOrHard = 3;
         _type = type;
+        _count = count;
     }
 
     public string RecordExercise()
@@ -24,7 +27,18 @@ abstract class Exercise
             Console.WriteLine(GetCurrentLevel());
             ChangeLevel();
         }
+        _count = _count + 1;
         return _type;
+    }
+
+    public string GetReport()
+    {
+        return $"{_name}: {_description}\nCompleted {_count} times\n";
+    }
+
+    public string GetName()
+    {
+        return _name;
     }
 
     public abstract void ChangeLevel();

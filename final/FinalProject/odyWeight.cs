@@ -5,13 +5,13 @@ class BodyWeight : Exercise
     private int _series;
     private int _repetition;
 
-    public BodyWeight(int series, int reps, string name, string description) : base(name, description, "BW")
+    public BodyWeight(int series, int reps, string name, string description, int count) : base(name, description, "BW", count)
     {
         _series = series;
         _repetition = reps;
     }
 
-    public BodyWeight(string name, string description) : base(name, description, "BW")
+    public BodyWeight(string name, string description) : base(name, description, "BW", 0)
     {
         _series = 3;
         _repetition = 10;
@@ -19,7 +19,7 @@ class BodyWeight : Exercise
 
     public override string StringToSave()
     {
-        return $"BW:{base._name}*{base._descripton}*{_series}*{_repetition}";
+        return $"BW:{base._name}*{base._description}*{_series}*{_repetition}*{base._count}";
     }
 
     public override string GetCurrentLevel()

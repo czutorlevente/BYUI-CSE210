@@ -7,7 +7,7 @@ class WeightLifting : Exercise
     private int _repetition;
     private string _unit;
 
-    public WeightLifting(string name, string description, int weight, int series, int reps, string unit) : base(name, description, "W")
+    public WeightLifting(string name, string description, int weight, int series, int reps, string unit, int count) : base(name, description, "W", count)
     {
         _weight = weight;
         _series = series;
@@ -15,7 +15,7 @@ class WeightLifting : Exercise
         _unit = unit;
     }
 
-    public WeightLifting(string name, string description) : base(name, description, "W")
+    public WeightLifting(string name, string description) : base(name, description, "W", 0)
     {
         _weight = 10;
         _series = 3;
@@ -25,7 +25,7 @@ class WeightLifting : Exercise
 
     public override string StringToSave()
     {
-        return $"BW:{base._name}*{base._descripton}*{_series}*{_repetition}*{_weight}*{_unit}";
+        return $"BW:{base._name}*{base._description}*{_series}*{_repetition}*{_weight}*{_unit}*{base._count}";
     }
 
     public override string GetCurrentLevel()
