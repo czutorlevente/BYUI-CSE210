@@ -26,7 +26,9 @@ class Swimming : Exercise
     public override void ChangeLevel()
     {
         Console.WriteLine("How many laps do you want to do in the future? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _laps = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Motivation mot = new Motivation();
         mot.ShowSpinner(5);
         Console.WriteLine($"\nNew level: {_laps} laps of {base._name}");

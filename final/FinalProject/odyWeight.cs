@@ -29,9 +29,13 @@ class BodyWeight : Exercise
     public override void ChangeLevel()
     {
         Console.WriteLine("What is the new number of series? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _series = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.DarkRed;
         Console.WriteLine("What is the new number of repetitions in each series? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _repetition = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Blue;
         Motivation mot = new Motivation();
         mot.ShowSpinner(5);
         Console.WriteLine($"\nThe new level: {_series}x{_repetition}");

@@ -1,3 +1,4 @@
 W:Bench press*Bench press in the school gym*3*12*100*kg*3
 S:Swimming*Swim in the school swimming pool*11*2
 CA:Walking*Walk up to the temple*15*1
+BW:Push ups*Normal push ups*3*30*0

@@ -30,9 +30,13 @@ class Running : Exercise
     public override void ChangeLevel()
     {
         Console.WriteLine("What is the new speed? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _speed = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("What is the new duration in minutes? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _duration = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Blue;
         Motivation mot = new Motivation();
         mot.ShowSpinner(5);
         Console.WriteLine($"\nThe new level: {_duration} at {_speed}");

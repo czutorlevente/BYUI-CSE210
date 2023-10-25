@@ -107,7 +107,9 @@ class ExerciseManager
             Console.WriteLine("\nThe default setting for this exercise is this:");
             Console.WriteLine(exercise.GetCurrentLevel());
             Console.Write("Type '1' if you want to make a change to it (or any other button if you want to accept it): ");
+            Console.ForegroundColor = ConsoleColor.Magenta;
             string change = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Red;
 
             if (change == "1")
             {
@@ -205,8 +207,16 @@ class ExerciseManager
 
     public void SaveExercises()
     {
-        Console.Write("What is the file name? ");
-        string _filename = Console.ReadLine();
+        Console.Write("Do you want to save it to the default 'Exercise.txt' file?\nPush '1' for a different file, and any other button for the default file: ");
+        string isDefault = Console.ReadLine();
+        string _filename = "Exercise.txt";
+
+        if (isDefault == "1")
+        {
+            Console.Write("What is the filename? ");
+            _filename = Console.ReadLine();
+        }
+
         using (StreamWriter _file = new StreamWriter(_filename))
         {
             foreach (Exercise _e in _exercises)
@@ -218,8 +228,15 @@ class ExerciseManager
 
     public void LoadExercises()
     {
-        Console.Write("What is the file name? ");
-        string _filename = Console.ReadLine();
+        Console.Write("Do you want to load the default 'Exercise.txt' file or something else?\nPush '1' for something else, and any other button for 'Exercise': ");
+        string _exer = Console.ReadLine();
+        string _filename = "Exercise.txt";
+        if (_exer == "1")
+        {
+            Console.Write("What is the file name? ");
+            _filename = Console.ReadLine();
+        }
+
         string[] _lines = System.IO.File.ReadAllLines(_filename);
 
         foreach (string line in _lines)

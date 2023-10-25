@@ -36,13 +36,21 @@ class WeightLifting : Exercise
     public override void ChangeLevel()
     {
         Console.WriteLine("What is the new number of series? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _series = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("What is the new number of repetitions in each series? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _repetition = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("What is the new unit of weight? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _unit = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($"What is the new weight amount in {_unit}? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _weight = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Motivation mot = new Motivation();
         mot.ShowSpinner(5);
         Console.WriteLine($"\nThe new level: {_series}x{_repetition}, {_weight} {_unit}");

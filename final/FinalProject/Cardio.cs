@@ -27,7 +27,9 @@ class Cardio : Exercise
     public override void ChangeLevel()
     {
         Console.WriteLine("How long (in minutes) do you want to do this cardio exercise next time? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _duration = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Red;
         Motivation mot = new Motivation();
         mot.ShowSpinner(5);
         Console.WriteLine($"\nNew level: {base._name} for {_duration} minutes");
