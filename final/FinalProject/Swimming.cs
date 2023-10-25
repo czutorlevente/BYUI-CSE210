@@ -21,7 +21,7 @@ class Swimming : Exercise
 
     public override string GetCurrentLevel()
     {
-        return $"Current level: {_laps} laps of {base._name}";
+        return $"{_laps} laps of {base._name}";
     }
     public override void ChangeLevel()
     {

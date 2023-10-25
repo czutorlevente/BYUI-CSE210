@@ -30,7 +30,7 @@ class WeightLifting : Exercise
 
     public override string GetCurrentLevel()
     {
-        return $"Current level: {_series}x{_repetition}, {_weight} {_unit}";
+        return $"{_series}x{_repetition}, {_weight} {_unit}";
     }
 
     public override void ChangeLevel()

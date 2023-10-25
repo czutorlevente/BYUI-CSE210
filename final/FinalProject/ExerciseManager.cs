@@ -9,11 +9,35 @@ class ExerciseManager
     {
         bool _stop = false;
         Motivation mot = new Motivation();
+
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.BackgroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Welcome to the Exercise program!\nDo you want to load a file?");
+        Console.ResetColor();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write("Type '1' if not. Push enter if yes: ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        string answer = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        if (answer == "1")
+        {
+            mot.ShowSpinner(2);
+        }
+
+        else
+        {
+            Console.Clear();
+            LoadExercises();
+            Console.Write("Exercises loaded");
+            mot.ShowSpinner(4);
+            Console.Clear();
+        }
+
         while (!_stop)
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("Options:\n1 - ADD NEW EXERCISE\n2 - LOAD EXERCISES\n3 - SAVE EXERCISES\n4 - SHOW CURRENT EXERCISES\n5 - RECORD COMPLETION OF EXERCISE\n \nType the number of choice (or push any other button to finish): ");
+            Console.Write("Options:\n1 - ADD NEW EXERCISE\n2 - LOAD EXERCISES\n3 - SAVE EXERCISES\n4 - SHOW CURRENT EXERCISES\n5 - RECORD COMPLETION OF EXERCISE\n \nType the number of choice (or push enter to finish): ");
             Console.ForegroundColor = ConsoleColor.Magenta;
             string response = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Red;
@@ -106,7 +130,7 @@ class ExerciseManager
             WeightLifting exercise = new WeightLifting(name, descr);
             Console.WriteLine("\nThe default setting for this exercise is this:");
             Console.WriteLine(exercise.GetCurrentLevel());
-            Console.Write("Type '1' if you want to make a change to it (or any other button if you want to accept it): ");
+            Console.Write("Type '1' if you want to make a change to it (or enter if you want to accept it): ");
             Console.ForegroundColor = ConsoleColor.Magenta;
             string change = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Red;
@@ -207,7 +231,7 @@ class ExerciseManager
 
     public void SaveExercises()
     {
-        Console.Write("Do you want to save it to the default 'Exercise.txt' file?\nPush '1' for a different file, and any other button for the default file: ");
+        Console.Write("Do you want to save it to the default 'Exercise.txt' file?\nPush '1' for a different file, and push enter for the default file: ");
         string isDefault = Console.ReadLine();
         string _filename = "Exercise.txt";
 
@@ -228,7 +252,7 @@ class ExerciseManager
 
     public void LoadExercises()
     {
-        Console.Write("Do you want to load the default 'Exercise.txt' file or something else?\nPush '1' for something else, and any other button for 'Exercise': ");
+        Console.Write("Do you want to load the default 'Exercise.txt' file or something else?\nPush '1' for something else, or push enter for 'Exercise': ");
         string _exer = Console.ReadLine();
         string _filename = "Exercise.txt";
         if (_exer == "1")

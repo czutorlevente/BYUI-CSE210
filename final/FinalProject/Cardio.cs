@@ -21,7 +21,7 @@ class Cardio : Exercise
 
     public override string GetCurrentLevel()
     {
-        return $"Current level: {base._name} for {_duration} minutes";
+        return $"{base._name} for {_duration} minutes";
     }
 
     public override void ChangeLevel()

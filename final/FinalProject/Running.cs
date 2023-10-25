@@ -24,7 +24,7 @@ class Running : Exercise
 
     public override string GetCurrentLevel()
     {
-        return $"Current level: {_duration} at {_speed}";
+        return $"{_duration} at {_speed}";
     }
 
     public override void ChangeLevel()

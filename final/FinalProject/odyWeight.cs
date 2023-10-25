@@ -24,7 +24,7 @@ class BodyWeight : Exercise
 
     public override string GetCurrentLevel()
     {
-        return $"Current level: {_series}x{_repetition}";
+        return $"{_series}x{_repetition}";
     }
     public override void ChangeLevel()
     {
