@@ -1,2 +1,3 @@
-W:Bench press*Bench press in the school gym*4*12*300*lbs*1
-S:Swimming*Swim in the school swimming pool*10*1
+W:Bench press*Bench press in the school gym*3*12*100*kg*3
+S:Swimming*Swim in the school swimming pool*11*2
+CA:Walking*Walk up to the temple*15*1

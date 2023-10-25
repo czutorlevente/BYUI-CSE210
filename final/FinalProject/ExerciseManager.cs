@@ -8,10 +8,15 @@ class ExerciseManager
     public void Play()
     {
         bool _stop = false;
+        Motivation mot = new Motivation();
         while (!_stop)
         {
-            Console.WriteLine("Options:\n1 - ADD NEW EXERCISE\n2 - LOAD EXERCISES\n3 - SAVE EXERCISES\n4 - SHOW CURRENT EXERCISES\n5 - RECORD COMPLETION OF EXERCISE\n \nType the number of choice (or push any other button to finish): ");
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Options:\n1 - ADD NEW EXERCISE\n2 - LOAD EXERCISES\n3 - SAVE EXERCISES\n4 - SHOW CURRENT EXERCISES\n5 - RECORD COMPLETION OF EXERCISE\n \nType the number of choice (or push any other button to finish): ");
+            Console.ForegroundColor = ConsoleColor.Magenta;
             string response = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Red;
 
             if (response == "1")
             {
@@ -20,7 +25,11 @@ class ExerciseManager
 
             else if (response == "2")
             {
+                Console.Clear();
                 LoadExercises();
+                Console.Write("Exercises loaded");
+                mot.ShowSpinner(4);
+                Console.Clear();
             }
 
             else if (response == "3")
@@ -79,12 +88,18 @@ class ExerciseManager
     public void CreateNew()
     {
         Console.Clear();
-        Console.Write("What type of exercise do you want to create?\n1 - Weight lifting\n2 - Body weight\n3 - Running\n4 - Swimming\n5 - Other type of cardio\n \nType the number here: ");
+        Console.Write("What type of exercise do you want to create?\n \n1 - Weight lifting\n2 - Body weight\n3 - Running\n4 - Swimming\n5 - Other type of cardio\n \nType the number here: ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         string response = Console.ReadLine();
-        Console.Write("What is the name of this exercise? ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write("\nWhat is the name of this exercise? ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         string name = Console.ReadLine();
-        Console.Write("Describe the exercise with a few words: ");
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write("\nDescribe the exercise with a few words: ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         string descr = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Blue;
 
         if (response == "1")
         {

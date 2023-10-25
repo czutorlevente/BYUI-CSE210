@@ -20,11 +20,17 @@ abstract class Exercise
 
     public void RecordExercise()
     {
-        Console.Write("How was this exercise?\n1 - Easy. We need to make it harder.\n2 - Hard. We need to make it easier.\n3 - Exactly right. No need to change.\nType your answer (1, 2, or 3) ");
+        Console.Clear();
+        Console.Write("How was this exercise?\n1 - Easy. We need to make it harder.\n2 - Hard. We need to make it easier.\n3 - Exactly right. No need to change.\nType your answer (1, 2, or 3): ");
+        Console.ForegroundColor = ConsoleColor.Magenta;
         _wasEasyOrHard = int.Parse(Console.ReadLine());
+        Console.ForegroundColor = ConsoleColor.Red;
         if (_wasEasyOrHard == 1 || _wasEasyOrHard == 2)
         {
-            Console.WriteLine(GetCurrentLevel());
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"{GetCurrentLevel()}\n");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             ChangeLevel();
         }
         _count = _count + 1;
