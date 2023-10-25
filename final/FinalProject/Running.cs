@@ -19,7 +19,7 @@ class Running : Exercise
 
     public override string StringToSave()
     {
-        return $"BW:{base._name}*{base._description}*{_speed}*{_duration}*{base._count}";
+        return $"R:{base._name}*{base._description}*{_speed}*{_duration}*{base._count}";
     }
 
     public override string GetCurrentLevel()

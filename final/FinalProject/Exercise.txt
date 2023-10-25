@@ -1,0 +1,2 @@
+W:Bench press*Bench press in the school gym*4*12*300*lbs*1
+S:Swimming*Swim in the school swimming pool*10*1

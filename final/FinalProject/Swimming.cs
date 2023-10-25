@@ -16,7 +16,7 @@ class Swimming : Exercise
 
     public override string StringToSave()
     {
-        return $"BW:{base._name}*{base._description}*{_laps}*{base._count}";
+        return $"S:{base._name}*{base._description}*{_laps}*{base._count}";
     }
 
     public override string GetCurrentLevel()

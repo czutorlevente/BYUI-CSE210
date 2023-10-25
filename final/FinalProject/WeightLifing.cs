@@ -25,7 +25,7 @@ class WeightLifting : Exercise
 
     public override string StringToSave()
     {
-        return $"BW:{base._name}*{base._description}*{_series}*{_repetition}*{_weight}*{_unit}*{base._count}";
+        return $"W:{base._name}*{base._description}*{_series}*{_repetition}*{_weight}*{_unit}*{base._count}";
     }
 
     public override string GetCurrentLevel()

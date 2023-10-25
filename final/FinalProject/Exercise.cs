@@ -18,9 +18,9 @@ abstract class Exercise
         _count = count;
     }
 
-    public string RecordExercise()
+    public void RecordExercise()
     {
-        Console.WriteLine("How was this exercise?\n1 - Easy. We need to make it harder.\n2 - Hard. We need to make it easier.\n3 - Exactly right. No need to change.\nType your answer (1, 2, or 3) ");
+        Console.Write("How was this exercise?\n1 - Easy. We need to make it harder.\n2 - Hard. We need to make it easier.\n3 - Exactly right. No need to change.\nType your answer (1, 2, or 3) ");
         _wasEasyOrHard = int.Parse(Console.ReadLine());
         if (_wasEasyOrHard == 1 || _wasEasyOrHard == 2)
         {
@@ -28,7 +28,6 @@ abstract class Exercise
             ChangeLevel();
         }
         _count = _count + 1;
-        return _type;
     }
 
     public string GetReport()

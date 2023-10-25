@@ -30,7 +30,10 @@ class ExerciseManager
 
             else if (response == "4")
             {
+                Console.Clear();
                 ShowAll();
+                Console.Write("Push any button to continue");
+                Console.ReadKey();
             }
 
             else if (response == "5")
@@ -55,7 +58,7 @@ class ExerciseManager
 
     public void ShowAll()
     {
-        Console.WriteLine("You have the following exercises:");
+        Console.WriteLine("\nYou have the following exercises:\n");
         foreach (Exercise _exe in _exercises)
         {
             Console.WriteLine(_exe.GetReport());
@@ -75,7 +78,8 @@ class ExerciseManager
 
     public void CreateNew()
     {
-        Console.WriteLine("What type of exercise do you want to create?\n1 - Weight lifting\n2 - Body weight\n3 - Running\n4 - Swimming\n5 - Other type of cardio\n \nType the number here: ");
+        Console.Clear();
+        Console.Write("What type of exercise do you want to create?\n1 - Weight lifting\n2 - Body weight\n3 - Running\n4 - Swimming\n5 - Other type of cardio\n \nType the number here: ");
         string response = Console.ReadLine();
         Console.Write("What is the name of this exercise? ");
         string name = Console.ReadLine();
@@ -87,7 +91,7 @@ class ExerciseManager
             WeightLifting exercise = new WeightLifting(name, descr);
             Console.WriteLine("\nThe default setting for this exercise is this:");
             Console.WriteLine(exercise.GetCurrentLevel());
-            Console.Write("Type '1' if you want to make a change to it: ");
+            Console.Write("Type '1' if you want to make a change to it (or any other button if you want to accept it): ");
             string change = Console.ReadLine();
 
             if (change == "1")
@@ -108,7 +112,7 @@ class ExerciseManager
             BodyWeight exercise = new BodyWeight(name, descr);
             Console.WriteLine("\nThe default setting for this exercise is this:");
             Console.WriteLine(exercise.GetCurrentLevel());
-            Console.Write("Type '1' if you want to make a change to it: ");
+            Console.Write("Type '1' if you want to make a change to it (or any other button if you want to accept it): ");
             string change = Console.ReadLine();
 
             if (change == "1")
@@ -128,7 +132,7 @@ class ExerciseManager
             Running exercise = new Running(name, descr);
             Console.WriteLine("\nThe default setting for this exercise is this:");
             Console.WriteLine(exercise.GetCurrentLevel());
-            Console.Write("Type '1' if you want to make a change to it: ");
+            Console.Write("Type '1' if you want to make a change to it (or any other button if you want to accept it): ");
             string change = Console.ReadLine();
 
             if (change == "1")
@@ -148,7 +152,7 @@ class ExerciseManager
             Swimming exercise = new Swimming(name, descr);
             Console.WriteLine("\nThe default setting for this exercise is this:");
             Console.WriteLine(exercise.GetCurrentLevel());
-            Console.Write("Type '1' if you want to make a change to it: ");
+            Console.Write("Type '1' if you want to make a change to it (or any other button if you want to accept it): ");
             string change = Console.ReadLine();
 
             if (change == "1")
@@ -168,7 +172,7 @@ class ExerciseManager
             Cardio exercise = new Cardio(name, descr);
             Console.WriteLine("\nThe default setting for this exercise is this:");
             Console.WriteLine(exercise.GetCurrentLevel());
-            Console.Write("Type '1' if you want to make a change to it: ");
+            Console.Write("Type '1' if you want to make a change to it (or any other button if you want to accept it): ");
             string change = Console.ReadLine();
 
             if (change == "1")
